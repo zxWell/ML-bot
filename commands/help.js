@@ -1,6 +1,6 @@
 module.exports = async (bot,message,args,argsF) => {
 
-const cnt = '```/help\n/test\n/color\n/or\n/private role\n/profile\n```'
+const cnt = "пока не работает"
 
     message.reply({
         ephemeral: true,

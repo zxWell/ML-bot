@@ -33,6 +33,17 @@ module.exports = async (bot,message,args,argsF) => {
     }) 
     /* ✔️ */
 
+    if(args.info === "colors"){
+        message.reply({
+            ephemeral: true, 
+            content: "- Цвета были отправлены вам в ЛС",
+        });
+        message.author.send("Вот три сайта с HEX и RGB кодами");
+        message.author.send("Первый источник:**\n" + `https://colorscheme.ru/html-colors.html?ysclid=lbhpdm95z3633248177`);
+        message.author.send("Второй источник:**\n" + `https://htmlcolorcodes.com/colors/`);
+        message.author.send("Третий источник:**\n" + `https://www.color-hex.com/`);
+    }
+
 };
 module.exports.names = ["info"];
 module.exports.interaction = {
@@ -51,6 +62,10 @@ module.exports.interaction = {
                 {
                     name: "Народ",
                     value: "AllUsers"
+                },
+                {
+                    name: "Цвета",
+                    value: "colors"
                 }
             ],
             required: false
