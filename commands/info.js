@@ -25,18 +25,21 @@ module.exports = async (bot,message,args,argsF) => {
 
     if(args.info === "AllGuilds"){
         return message.reply({
-            content: "- Всего серверов:\n`${bot.guilds.cache.size}`"
+            content: "- Всего серверов: *`"+`${bot.guilds.cache.size}`+"`*"
         })
     }
 
     if(args.info === "AllUsers"){
         return message.reply({
-            content: "- Всего народу на сервере:\n`${totalUsers}`"
+            content: "- Всего народу на сервере: *`"+`${totalUsers}`+"`*"
         })
     }
 
+
+    const User = `${totalUsers}`
+    const Guild = `${bot.guilds.cache.size}`
     message.reply({
-        content: "- Сводка по бестиарию.\nСервера: `${bot.guilds.cache.size}`\nЧелики: `${totalUsers}`"
+        content: "- Сводка по бестиарию.\nСервера:*`" + `${Guild}` + "`*\nЧелики:*`" + `${User}` + "`*"
     })
 
 };
@@ -47,7 +50,7 @@ module.exports.interaction = {
     options: [
         {
             name: "info",
-            description: "информация о...",
+            description: "Информейшн про...",
             type: "STRING",
 	        choices: [
                 {
