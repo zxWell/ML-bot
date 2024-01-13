@@ -65,7 +65,7 @@ module.exports.interaction = {
                     value: "AllUsers"
                 }
             ],
-            required: true
+            required: false
         },
     ],
     defaultPermission: true
