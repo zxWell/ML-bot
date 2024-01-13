@@ -11,18 +11,6 @@ module.exports = async (bot,message,args,argsF) => {
         return message.reply("У тя недостаток прав, бро.... :skull:");
     }
 
-    /*if(args.info === "AllGuilds"){
-        return message.reply({
-            content: `${guilds}`
-        })
-    }
-
-    if(args.info === "AllUsers"){
-        return message.reply({
-            content: `${users}`
-        })
-    }*/
-
     if(args.info === "AllGuilds"){
         return message.reply({
             content: "- Всего серверов: *`"+`${bot.guilds.cache.size}`+"`*"
