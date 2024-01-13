@@ -14,45 +14,6 @@ module.exports = async (bot) => {
 
     bot.user.setStatus("idle");
 
-    // console.log(bot.Memory.console);
-    //console.log(bot.Memory.consoleClear);
-
-    /*const collors = ["#FF0000", "#00FF00", "#FF1493"]; //Запрещено дискордом!
-    let n = 1;
-    const role = await bot.guilds.cache.get("899200433552252989").roles.fetch("913442305153855518");
-    setInterval(() => {
-        if(collors.length == n) n = 0;
-        role.setColor(collors[n]);
-        n++;
-    }, 60000);
-    role.setColor(collors[0]);*/
-
-    /*const guild = bot.Memory.guilds.get("899200433552252989");
-    guild.clearData; //Извлекает копию данных гильдии
-    //или
-    bot.Memory.guilds.clearData; //Извлекает копию всех данных гильдии в памяти
-    guild.cache; //Получает кэш раздора этой гильдии
-    await guild.fetch(); //Ищет эту гильдию в discord
-    guild.update("name"); //Обновляет / сбрасывает определенный ключ настройки до значения по умолчанию (заданного схемой)
-    //или
-    bot.Memory.guilds.update("name"); //Обновляет / сбрасывает определенный ключ для всех гильдий в памяти*/
-
-    // setInterval(async () => {
-    //     for (const guild of bot.Memory.guilds) {
-    //         const cacheGuild = guild.cache;
-    //         for (const it of guild.muted) {
-    //             if(it.time+it.date<Date.now()) {
-    //                 const user = await cacheGuild.members.fetch(it.id);
-    //                 if(!user) break;
-    //                 user.roles.remove("911636933791334440");
-    //                 if(user.voice.channel) user.voice.setMute(false);
-    //                 guild.muted.splice(guild.muted.indexOf(it),1);
-    //             }
-    //         }
-    //     }
-    // }, 5000);
-
-
     const guildData = bot.guilds.cache.get("1184447509448368208");
     setInterval(() => {
         const channels = {
