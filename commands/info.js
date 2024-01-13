@@ -8,7 +8,7 @@ module.exports = async (bot,message,args,argsF) => {
     var totalUsers = bot.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0)
 
     if(!message.channel.permissionsFor(message.author).has(Permissions.FLAGS.ADMINISTRATOR)) {
-        return message.reply("У тебя не достаточно прав");
+        return message.reply("У тя недостаток прав, бро.... :skull:");
     }
 
     /*if(args.info === "AllGuilds"){
@@ -25,31 +25,31 @@ module.exports = async (bot,message,args,argsF) => {
 
     if(args.info === "AllGuilds"){
         return message.reply({
-            content: `всего серверов: ${bot.guilds.cache.size}`
+            content: `Всего серверов: ${bot.guilds.cache.size}`
         })
     }
 
     if(args.info === "AllUsers"){
         return message.reply({
-            content: `всего участников: ${totalUsers}`
+            content: `Всего народу: ${totalUsers}`
         })
     }
 
     if(args[0] === "AllUsers" || args[0] === "AllGuilds"){
         return message.reply({
-            content: `введите команду через слэш и выберите нужное вам действие`
+            content: `Вводи «/» и тыкай куда надо, дальше разберёшься`
         })
     }
 
     message.reply({
-        content: `вся инфорация: \n\nвсего серверов: ${bot.guilds.cache.size}\nвсего участников: ${totalUsers}`
+        content: `Общая инфушка: \n\nСервера: ${bot.guilds.cache.size}\nЧелики: ${totalUsers}`
     })
 
 };
 module.exports.names = ["info"];
 module.exports.interaction = {
     name: 'info',
-    description: 'посмотреть информацию',
+    description: 'Чек инфу',
     options: [
         {
             name: "info",
