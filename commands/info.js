@@ -31,7 +31,7 @@ module.exports = async (bot,message,args,argsF) => {
     message.reply({
         content: "### Сводка по бестиарию.\nСервера: *`" + `${Guild}` + "`*\nЧелики: *`" + `${User}` + "`*"
     }) 
-    /* ✔️ */
+    /* ✔️ */ 
 
 };
 module.exports.names = ["info"];
@@ -51,7 +51,7 @@ module.exports.interaction = {
                 {
                     name: "Народ",
                     value: "AllUsers"
-                }
+                },
             ],
             required: false
         },

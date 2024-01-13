@@ -5,9 +5,6 @@ module.exports = async (bot) => {
     console.log()
     console.log()
 
-    // bot.channels.cache.get('1050802537789399140')
-    // .send("online <a:spunkboi:1053318106052841482>") //<a:wideputin:1053318122611937390>
-
     let totalUsers = bot.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0)
     var activities = [ `${bot.guilds.cache.size} серверов`, `${totalUsers} пользователей!` ], i = 0;
     setInterval(() => bot.user.setActivity(`help | ${activities[i++ % activities.length]}`, { type: "WATCHING" }),30000);
