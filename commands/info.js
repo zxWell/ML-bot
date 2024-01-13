@@ -11,38 +11,23 @@ module.exports = async (bot,message,args,argsF) => {
         return message.reply("У тя недостаток прав, бро.... :skull:");
     }
 
-    /*if(args.info === "AllGuilds"){
-        return message.reply({
-            content: `${guilds}`
-        })
-    }
-
-    if(args.info === "AllUsers"){
-        return message.reply({
-            content: `${users}`
-        })
-    }*/
-
     if(args.info === "AllGuilds"){
         return message.reply({
-            content: `Всего серверов: ${bot.guilds.cache.size}`
+            content: "- Всего серверов: *`"+`${bot.guilds.cache.size}`+"`*"
         })
     }
 
     if(args.info === "AllUsers"){
         return message.reply({
-            content: `Всего народу: ${totalUsers}`
+            content: "- Всего народу на сервере: *`"+`${totalUsers}`+"`*"
         })
     }
 
-    if(args[0] === "AllUsers" || args[0] === "AllGuilds"){
-        return message.reply({
-            content: `Вводи «/» и тыкай куда надо, дальше разберёшься`
-        })
-    }
 
+    const User = `${totalUsers}`
+    const Guild = `${bot.guilds.cache.size}`
     message.reply({
-        content: `Общая инфушка: \n\nСервера: ${bot.guilds.cache.size}\nЧелики: ${totalUsers}`
+        content: "- Сводка по бестиарию.\nСервера:*`" + `${Guild}` + "`*\nЧелики:*`" + `${User}` + "`*"
     })
 
 };
@@ -53,15 +38,15 @@ module.exports.interaction = {
     options: [
         {
             name: "info",
-            description: "информация о...",
+            description: "Информейшн про...",
             type: "STRING",
 	        choices: [
                 {
-                    name: "AllGuilds",
+                    name: "Сервера",
                     value: "AllGuilds"
                 },
                 {
-                    name: "AllUsers",
+                    name: "Народ",
                     value: "AllUsers"
                 }
             ],
