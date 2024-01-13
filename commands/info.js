@@ -25,19 +25,13 @@ module.exports = async (bot,message,args,argsF) => {
 
     if(args.info === "AllGuilds"){
         return message.reply({
-            content: "Всего серверов:\n`${bot.guilds.cache.size}`"
+            content: "- Всего серверов:\n`${bot.guilds.cache.size}`"
         })
     }
 
     if(args.info === "AllUsers"){
         return message.reply({
             content: "- Всего народу на сервере:\n`${totalUsers}`"
-        })
-    }
-
-    if(args[0] === "AllUsers" || args[0] === "AllGuilds"){
-        return message.reply({
-            content: "- Выбери аргумент."
         })
     }
 
