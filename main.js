@@ -28,6 +28,8 @@ bot.Memory = new DiscordDB("Memory", bot);
 bot.Memory = require('./Memory.json');
 
 setInterval(() => {
+    console.log('запись: ')
+    console.log(JSON.stringify(bot.Memory, null, '\t'));
     fs.writeFileSync(`./Memory.json`, JSON.stringify(bot.Memory, null, '\t'))
 }, 10000)
 
@@ -41,22 +43,21 @@ function isObject(object) {
 
 bot.createGuild = (message) =>{
     return {
-        id: guild.id,
-        name: guild.name,
-        members: {},
-        warns: 0
+        id: message.guild.id,
+        name: message.guild.name,
+        members: {}
     };
 };
 bot.createUser = (message) =>{
     return {
-        id: user.id,
-        name: guild.name
+        id: message.author.id,
+        name: message.guild.name
     };
 };
 bot.createMember = (message) =>{
     return {
-        id: guild.id,
-        name: member.user.username
+        id: message.author.id,
+        name: message.author.username
     };
 };
 

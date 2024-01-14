@@ -13,11 +13,11 @@ module.exports = async (bot, message) => {
     }*/
 
 
-    // if(!bot.Memory.users[author.id]) bot.Memory.users[author.id] = bot.createUser(message);
-    // if(guild) {
-    //     if(!bot.Memory.guilds[guild.id]) bot.Memory.guilds[guild.id] = bot.createGuild(message);
-    //     if(!bot.Memory.guilds[guild.id].members[author.id]) bot.Memory.guilds[guild.id].members[author.id] = bot.createMember(message);
-    // }
+    if(!bot.Memory.users[author.id]) bot.Memory.users[author.id] = bot.createUser(message);
+    if(guild) {
+        if(!bot.Memory.guilds[guild.id]) bot.Memory.guilds[guild.id] = bot.createGuild(message);
+        if(!bot.Memory.guilds[guild.id].members[author.id]) bot.Memory.guilds[guild.id].members[author.id] = bot.createMember(message);
+    }
 
     if(content == "g/tex") bot.tex = !bot.tex;
 
