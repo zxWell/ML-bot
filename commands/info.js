@@ -28,13 +28,13 @@ module.exports = async (bot,message,args,argsF) => {
 
     if(args.info === "server"){
         return message.reply({
-            content: "- этот сервер основан на прошлом мл. Эбола удалил старый, а мы основали новый."
+            content: "- Этот сервер основан на прошлом Meme Land'e.\nЭбола удалил старый (еблан), а мы основали новый."
         })
     }
 
     if(args.info === "dev"){
         return message.reply({
-            content: "- разрабы:\n well.js ID: 1011761911123148850\nwerterker12 ID: 814200541336830014"
+            content: "- ~~Чурки~~Разработчики бота\n-- Код, финтиплюшки и оживление бота --\n* well ~ well.js | 1011761911123148850\n-- Финтиплюшки и работа с текстом --\n* !WerTerKer12.htmł ~ werterker12 | 814200541336830014"
         })
     }
 
