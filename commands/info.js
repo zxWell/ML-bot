@@ -28,7 +28,7 @@ module.exports = async (bot,message,args,argsF) => {
 
     if(args.info === "server"){
         return message.reply({
-            content: "- Этот сервер основан на прошлом Meme Land'e.\nЭбола удалил старый (еблан), а мы основали новый."
+            content: "- Этот сервер основан на прошлом Meme Land'e.\nЭбола удалил старый, а мы основали новый."
         })
     }
 

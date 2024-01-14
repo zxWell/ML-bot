@@ -31,7 +31,7 @@ setInterval(() => {
     console.log('запись: ')
     console.log(JSON.stringify(bot.Memory, null, '\t'));
     fs.writeFileSync(`./Memory.json`, JSON.stringify(bot.Memory, null, '\t'))
-}, 10000)
+}, 25000)
 
 function isObject(object) {
     if(
