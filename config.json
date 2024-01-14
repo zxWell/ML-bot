@@ -22,5 +22,6 @@
     "id": "1099005135742570606",
     "prefix": ".",
     "all": "```https://discord.com/api/oauth2/authorize?client_id=1099005135742570606&permissions=18282065284160&scope=applications.commands+bot```",
-    "Admin": "```https://discord.com/api/oauth2/authorize?client_id=1099005135742570606&permissions=8&scope=applications.commands+bot```"
+    "Admin": "```https://discord.com/api/oauth2/authorize?client_id=1099005135742570606&permissions=8&scope=applications.commands+bot```",
+    "server": "https://discord.gg/z2pPNTaF6n"
 }
