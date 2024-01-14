@@ -26,6 +26,18 @@ module.exports = async (bot,message,args,argsF) => {
     }
     /* ✔️ */
 
+    if(args.info === "server"){
+        return message.reply({
+            content: "- этот сервер основан на прошлом мл. Эбола удалил старый, а мы основали новый."
+        })
+    }
+
+    if(args.info === "dev"){
+        return message.reply({
+            content: "- разрабы:\n well.js ID: 1011761911123148850\nwerterker12 ID: 814200541336830014"
+        })
+    }
+
     const User = `${totalUsers}`
     const Guild = `${bot.guilds.cache.size}`
     message.reply({
@@ -52,6 +64,14 @@ module.exports.interaction = {
                     name: "Народ",
                     value: "AllUsers"
                 },
+                {
+                    name: "О сервере",
+                    value: "server"
+                },
+                {
+                    name: "Разработчики",
+                    value: "dev"
+                }
             ],
             required: false
         },
