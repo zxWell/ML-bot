@@ -21,6 +21,8 @@ module.exports = async (bot) => {
         channels[1].setName("Ботов: " + guildData.members.cache.filter(user=>user.user.bot).size);
     }, 10000);
 
+    console.log(bot.Memory.console);
+
     const commandsIT = bot.application.commands; //Или bot.application.commands - если команды будут глобальными
     await commandsIT.fetch(); //Найти все команды
 

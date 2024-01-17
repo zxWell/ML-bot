@@ -19,7 +19,7 @@ module.exports = async (bot, message) => {
         if(!bot.Memory.guilds[guild.id].members[author.id]) bot.Memory.guilds[guild.id].members[author.id] = bot.createMember(message);
     }
 
-    if(content == "g/tex") bot.tex = !bot.tex;
+    if(content == ".tex") bot.tex = !bot.tex;
 
 
     // if(!bot.Memory.guilds.get(guild.id)) return;
@@ -27,7 +27,7 @@ module.exports = async (bot, message) => {
     
     const 
         messageArray = content.split(' '), 
-        command = messageArray[0].replace(/*bot.Memory.guilds[guild.id].prefix, ""*/),
+        command = messageArray[0].replace(bot.Memory.guilds[guild.id].prefix, ""),
         args = messageArray.slice(1), 
         messageArrayFull = content.split(' '), 
         argsF = messageArrayFull.slice(1),
