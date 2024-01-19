@@ -3,6 +3,8 @@
     "canvas": "^2.11.2",
     "discord.js": "^13.8.1",
     "fs": "^0.0.1-security",
+    "quick.db": "^9.1.7",
+    "quick.eco": "^6.0.0",
     "simple-discord.db": "^0.1.0"
   }
 }

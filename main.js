@@ -3,7 +3,7 @@ const Discord = require('discord.js'),
     config = require('./config.json');
 config.bruh.intents = new Discord.Intents(config.bruh.intents);
 
-const bot = new Discord.Client(config.bruh);
+const bot = new Discord.Client(config.bruh, { disableMentions: 'everyone' });
 bot.login(config.token);
 
 require('./event')(bot);
@@ -20,10 +20,6 @@ for (const file of commandFiles) {
     });
     bot.commands.any.push(comand);
 };
-
-/*const DiscordDB = require('simple-discord.db');
-bot.Memory = new DiscordDB("Memory", bot);
-*/
 
 bot.Memory = require('./Memory.json');
 
@@ -45,13 +41,14 @@ bot.createGuild = (message) =>{
     return {
         id: message.guild.id,
         name: message.guild.name,
+        money: 0,
         members: {}
     };
 };
 bot.createUser = (message) =>{
     return {
         id: message.author.id,
-        name: message.guild.name
+        name: message.guild.name,
     };
 };
 bot.createMember = (message) =>{

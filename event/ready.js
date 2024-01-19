@@ -19,7 +19,7 @@ module.exports = async (bot) => {
         };
         channels[0].setName("Участников: " + guildData.memberCount);
         channels[1].setName("Ботов: " + guildData.members.cache.filter(user=>user.user.bot).size);
-    }, 10000);
+    }, 15000);
 
     console.log(bot.Memory.console);
 

@@ -4,5 +4,6 @@ module.exports = (bot) => {
     .on('guildMemberAdd', (member)=>require('./guildMemberAdd')(bot, member))
     .on('messageCreate', (message) => require('./messageCreate')(bot, message))
     .on('interactionCreate', (interaction) => require('./interactionCreate')(bot, interaction))
-    .on('voiceStateUpdate', (oldV,newV) => require('./voiceStateUpdate')(bot, oldV, newV));
+    .on('voiceStateUpdate', (oldV,newV) => require('./voiceStateUpdate')(bot, oldV, newV))
+    //.on('ready', (bot, message, member, members, guild, guilds) => require('./Memory')(bot, message, member, members, guild, guilds));
 };
