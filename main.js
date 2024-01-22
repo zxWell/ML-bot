@@ -14,3 +14,4 @@ bot.Memory = new DiscordDB("Memory", bot); //Памятная память
 
 require('./handlers')(bot); //Запуск handler'ов
 require('./event')(bot); //Запуск ивентов
+require('./eco')(bot); //ЭКОНОМИКААА!!!!!ВАААААААА!!!!!!!!!!!

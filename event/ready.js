@@ -1,9 +1,4 @@
 module.exports = async (bot) => {
-    console.log()
-    console.log()
-    console.log(bot.user.username + " ready");
-    console.log()
-    console.log()
 
     let totalUsers = bot.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0)
     var activities = [ `${bot.guilds.cache.size} серверов`, `${totalUsers} пользователей!` ], i = 0;
@@ -23,4 +18,3 @@ module.exports = async (bot) => {
 
     console.log(bot.Memory.console);
 };
-//насрал🥰
