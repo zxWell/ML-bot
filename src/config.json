@@ -1,0 +1,28 @@
+{
+    "token": "MTA5OTAwNTEzNTc0MjU3MDYwNg.GwLNJs.r9j0vQcskH3Mltm-PtKW-cle0box9CtavZPK1o",
+    
+    "bruh": {
+        "intents": [
+            "GUILDS",
+            "GUILD_BANS",
+            "GUILD_EMOJIS_AND_STICKERS",
+            "GUILD_INTEGRATIONS",
+            "GUILD_WEBHOOKS",
+            "GUILD_INVITES",
+            "GUILD_VOICE_STATES",
+            "GUILD_MESSAGES",
+            "GUILD_MESSAGE_REACTIONS",
+            "GUILD_MESSAGE_TYPING",
+            "DIRECT_MESSAGES",
+            "DIRECT_MESSAGE_REACTIONS",
+            "DIRECT_MESSAGE_TYPING"
+        ]
+    },
+
+    "id": "1099005135742570606",
+    "prefix": ".",
+    "all": "```https://discord.com/api/oauth2/authorize?client_id=1099005135742570606&permissions=18282065284160&scope=applications.commands+bot```",
+    "Admin": "```https://discord.com/api/oauth2/authorize?client_id=1099005135742570606&permissions=8&scope=applications.commands+bot```",
+    "server": "https://discord.gg/z2pPNTaF6n",
+    "APIKey": "fb17df618ea577472b1c96669f0a58d4"
+}
