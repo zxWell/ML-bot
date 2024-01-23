@@ -5,8 +5,8 @@ const cooldownAns = require('./cooldownAns.json');
 const fs = require('fs');
 const db = require('quick.db');
 
-module.exports = async (client, message) => {
-    let prefix = message.content.startsWith(bot_prefix) ? bot_prefix : `${client.user.toString()} `;
+module.exports = async (bot, message) => {
+    let prefix = message.content.startsWith(bot_prefix) ? bot_prefix : `${bot.user.toString()} `;
     let color = embed_color;
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
@@ -20,11 +20,11 @@ module.exports = async (client, message) => {
     }
   let values = blacklist[message.author.id].checker
     if (values === 1) {
-      message.author.send(`Sorry, you\'ve been **BLACKLISTED** from using ${client.user.username} because violating **Our Rules**. Contact Sharif#9781 ( bot owner ) if you want to appeal.`);
+      message.author.send(`Sorry, you\'ve been **BLACKLISTED** from using ${bot.user.username} because violating **Our Rules**. Contact Sharif#9781 ( bot owner ) if you want to appeal.`);
     } else {
 
     // cooldowns command
-    let commandFile = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+    let commandFile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
     if (!commandFile) return;
     if (!cooldowns.has(commandFile.help.name)) {
         cooldowns.set(commandFile.help.name, new Collection());
@@ -51,13 +51,13 @@ module.exports = async (client, message) => {
   
     // command handler
   try {
-  let commands = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
-  commands.run(client, message, args, color, prefix);
+  let commands = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
+  commands.run(bot, message, args, color, prefix);
   if (!commands) return;
   } catch (e) {
       console.error(e)
   } finally {
-  console.info(`${message.author.tag}[${message.author.id}] is using ${message.content.split(" ")[0].replace(prefix, '')} command on shard ﹙${client.shard.id}﹚ ${message.guild.name}[${message.guild.id}]`);
+  console.info(`${message.author.tag}[${message.author.id}] is using ${message.content.split(" ")[0].replace(prefix, '')} command on shard ﹙${bot.shard.id}﹚ ${message.guild.name}[${message.guild.id}]`);
   db.add('commandUsage', 1);
   }
 } 

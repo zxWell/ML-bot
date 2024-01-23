@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 
-module.exports = client => {
-    client.commands = new Discord.Collection();
-    client.aliases = new Discord.Collection();
-    client.helps = new Discord.Collection();
+module.exports = bot => {
+    bot.commands = new Discord.Collection();
+    bot.aliases = new Discord.Collection();
+    bot.helps = new Discord.Collection();
  
   //function loadCmds () {
     fs.readdir('./src/commands/', (err, categories) => {
@@ -14,7 +14,7 @@ module.exports = client => {
             let moduleConf = require(`../commands/${category}/module.json`);
             moduleConf.path = `./commands/${category}`;
             moduleConf.cmds = [];
-            client.helps.set(category, moduleConf);
+            bot.helps.set(category, moduleConf);
             if (!moduleConf) return;
             fs.readdir(`./src/commands/${category}`, (err, files) => {
                 console.log(`Found total ${files.length - 1} command from ${category}.`)
@@ -25,11 +25,11 @@ module.exports = client => {
                     if (!file.endsWith('.js')) return;
                     let prop = require(`../commands/${category}/${file}`);
                     let cmdName = file.split('.')[0];
-                    client.commands.set(prop.help.name, prop);
+                    bot.commands.set(prop.help.name, prop);
                     prop.conf.aliases.forEach(alias => {
-                        client.aliases.set(alias, prop.help.name);
+                        bot.aliases.set(alias, prop.help.name);
                     });
-                    client.helps.get(category).cmds.push(prop.help.name)
+                    bot.helps.get(category).cmds.push(prop.help.name)
                 });
             });
         });
